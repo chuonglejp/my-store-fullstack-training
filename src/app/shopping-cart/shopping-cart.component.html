@@ -1,0 +1,60 @@
+<div *ngIf="items.length" class="row">
+  <div class="col-6">
+    <app-cart-item 
+      *ngFor="let item of items" 
+      [item] ="item"
+      (cartUpdated)="fetchItems()"
+    />
+    <div class="row text-center">
+      <h2>Total ${{ total }}</h2>
+    </div>
+  </div>
+  <div class="col-6">
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="fullname">Fullname</label>
+        <input 
+          type="email" 
+          class="form-control" 
+          id="fullname" 
+          name="fullname" 
+          placeholder="Enter fullname" 
+          [(ngModel)]="fullname" 
+          required 
+        />
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input 
+          type="text" 
+          class="form-control"
+          id="address" 
+          name="address" 
+          placeholder="Enter address" 
+          [(ngModel)]="address" 
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="creditCard">Credit card number</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="creditCard" 
+          name="creditCard" 
+          aria-describedby="creditCardHelp" 
+          placeholder="Enter credit card number" 
+          [(ngModel)]="creditCard" 
+          required 
+          minlength="16" 
+          maxlength="19"
+        />
+        <small id="creditCardHelp" class="form-text text-muted">We'll never share your credit card with anyone else.</small>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+    </form>
+  </div>
+</div>
+<div *ngIf="!items.length">
+  <p>Cart is empty!</p>
+</div>

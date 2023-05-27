@@ -1,0 +1,28 @@
+<div class="row mb-4">
+  <div class="col d-flex flex-column justify-content-center align-items-end">
+    <img [src]="item.product.url" width="100">
+  </div>
+  <div class="col d-flex flex-column justify-content-center align-items-start">
+    <div class="row">
+      <div class="col">
+        <p>{{ item.product.name }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>${{ item.product.price }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <span>Amount:&nbsp;</span>
+        <input class="quantity-input" type="number" name="quantity" [(ngModel)]="quantity" min="1" (change)="onQuantityChange()">
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col">
+        <button type="button" class="btn btn-outline-danger btn-sm" (click)="removeItem()">Remove Item</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-6 d-flex flex-column justify-content-center align-items-center">
+    <img [src]="product.url" alt="">
+  </div>
+  <div class="col-6 d-flex flex-column justify-content-center">
+    <div class="row">
+      <div class="col">
+        <h3>{{ product.name }}</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>${{ product.price }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>{{ product.description }}</p>
+      </div>
+    </div>
+    <div class="row mb-2">
+      <div class="col">
+        <select class="form-select quantity-select" name="quantity" [(ngModel)]="quantity">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary" (click)="addToCart()">Add to cart</button>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col">
+        <button type="button" class="btn btn-outline-primary" routerLink="/">← Back to Product List</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="card">
+  <img [src]="product.url" class="card-img-top" (click)="gotoProductDetail()">
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <h5 class="card-title">{{ product.name }}</h5>
+      </div>
+      <div class="col text-end">
+        <p class="card-text">${{ product.price }}</p>
+      </div>
+    </div>
+    <div class="row mb-2">
+      <div class="col"></div>
+      <div class="col text-center">
+        <form>
+          <select class="form-select" name="quantity" [(ngModel)]="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </form>
+      </div>
+      <div class="col"></div>
+    </div>
+    <div class="row">
+      <div class="col text-center">
+        <button class="btn btn-primary" (click)="addToCart()">Add to cart</button>
+      </div>
+    </div>
+  </div>
+</div>
