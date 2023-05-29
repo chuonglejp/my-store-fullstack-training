@@ -16,7 +16,7 @@
     <div class="row">
       <div class="col">
         <span>Amount:&nbsp;</span>
-        <input class="quantity-input" type="number" name="quantity" [(ngModel)]="quantity" min="1" (change)="onQuantityChange()">
+        <input class="quantity-input" type="number" name="quantity" [(ngModel)]="quantity" min="1" (ngModelChange)="onQuantityChange()">
       </div>
     </div>
     <div class="row mt-2">
